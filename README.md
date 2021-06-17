@@ -18,6 +18,12 @@ pyhton -m venv .env
 source .env/bin/activate
 ```
 
+## Clone this repo
+
+```git
+git clone https://github.com/ceste/hello_docker.git
+```
+
 ## Install the requirements
 
 ```python
