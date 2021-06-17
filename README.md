@@ -79,7 +79,7 @@ docker push new-repo:tagname
 docker push chandrasutrisnotjhong/docker-greeting:latest
 ```
 
-## Run dockehub_repo
+## Run image from the repo (should run it from your production environment)
 
 If the image is not available on local, it will download the image first and then run it.
 
