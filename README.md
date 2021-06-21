@@ -3,7 +3,6 @@
 Almost a whole CI/CD pipeline repo that show to build a docker image, publish it and deploy it. I will keep updating this repo until it reaches the complete CI/CD pipeline.
 
 To do:
-* Create a YAML file to automate the CD process
 * Auto push to Dockerhub
 
 ## Create a virtual environment
