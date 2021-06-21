@@ -87,3 +87,8 @@ If the image is not available on local, it will download the image first and the
 ```docker
 docker run -it chandrasutrisnotjhong/docker-greeting python main.py --name abc
 ```
+
+Reference:
+- https://docs.github.com/en/actions/learn-github-actions#using-the-checkout-action
+- https://canovasjm.netlify.app/2021/01/12/github-secrets-from-python-and-r/
+- 
