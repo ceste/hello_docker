@@ -1,3 +1,5 @@
+[![Python application](https://github.com/ceste/hello_docker/actions/workflows/main.yml/badge.svg)](https://github.com/ceste/hello_docker/actions/workflows/main.yml)
+
 # hello_docker
 
 Almost a whole CI/CD pipeline repo that show to build a docker image, publish it and deploy it. I will keep updating this repo until it reaches the complete CI/CD pipeline.
