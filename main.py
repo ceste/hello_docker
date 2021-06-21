@@ -9,7 +9,7 @@ def do_this(name):
     encoder.save('./datamatrix_test_'+name+'.png')
     print(encoder.get_ascii())
 
-
+    print('CI/CD workflow added!!')
 
 
 if __name__== '__main__':
@@ -22,10 +22,3 @@ if __name__== '__main__':
 	name = args.name
 
 	do_this(name)
-
-
-
-
-
-
-
