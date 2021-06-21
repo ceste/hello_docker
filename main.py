@@ -1,5 +1,6 @@
 import argparse
 from pystrich.datamatrix import DataMatrixEncoder
+from secret import SECRET
 
 def do_this(name):
 
@@ -8,6 +9,8 @@ def do_this(name):
     encoder = DataMatrixEncoder(name)
     encoder.save('./datamatrix_test_'+name+'.png')
     print(encoder.get_ascii())
+
+    print('your secret is:',SECRET)
 
     print('CI/CD workflow added!!')
 
