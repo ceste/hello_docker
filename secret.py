@@ -1,1 +1,1 @@
-SECRET = 'ABC'
+SECRET = os.environ.get('SECRER')
