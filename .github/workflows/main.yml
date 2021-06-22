@@ -29,5 +29,6 @@ jobs:
       run: |
         echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_ID }}" --password-stdin docker.io        
         docker build -t docker-greeting .
-        docker push docker.io/${{ secrets.DOCKER_HUB_ID }}/${{ secrets.DOCKER_HUB_REPOSITORY }}:$GITHUB_SHA
+        docker tag docker-greeting:latest chandrasutrisnotjhong/docker-greeting:latest
+        docker push chandrasutrisnotjhong/docker-greeting:latest
       
