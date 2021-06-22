@@ -92,7 +92,9 @@ If there is new build, pull the latest build and then run above command:
 docker pull chandrasutrisnotjhong/docker-greeting:latest
 ```
 
-## Push local image to Heroku
+## Push local docker image to Heroku
+
+Additional steps if what you built is an API
 
 Login to Heroku 
 
