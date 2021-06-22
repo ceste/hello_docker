@@ -110,11 +110,11 @@ Create an app on Heroku
 
 ```heroku
 heroku create <name-for-your-app>
-```heroku
+```
 
 ```heroku
 heroku create cst-hello-docker
-```heroku
+```
 
 Push the container into Heroku
 
