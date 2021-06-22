@@ -142,10 +142,12 @@ https://<name-for-your-app>.herokuapp.com/
 
 
 
-
+Deploy Docker Image to Heroku App is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.
+  
 
 
 References:
 - https://docs.github.com/en/actions/learn-github-actions#using-the-checkout-action
 - https://canovasjm.netlify.app/2021/01/12/github-secrets-from-python-and-r/
+- https://github.com/marketplace/actions/deploy-docker-image-to-heroku-app 
 
