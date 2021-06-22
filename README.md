@@ -92,6 +92,59 @@ If there is new build, pull the latest build and then run above command:
 docker pull chandrasutrisnotjhong/docker-greeting:latest
 ```
 
+## Push local image to Heroku
+
+Login to Heroku 
+
+```
+heroku login
+```
+
+Login to Heroku Container Registry
+
+```
+heroku container:login
+```
+
+Create an app on Heroku 
+
+```heroku
+heroku create <name-for-your-app>
+```heroku
+
+```heroku
+heroku create cst-hello-docker
+```heroku
+
+Push the container into Heroku
+
+```heroku
+heroku container:push web --app <name-for-your-app>
+```
+
+```heroku
+heroku container:push web --app cst-hello-docker
+```
+
+Deploy the container
+
+```heroku
+heroku container:release web <name-for-your-app>
+```
+
+```heroku
+heroku container:release web --app cst-hello-docker
+```
+
+Open your app 
+
+https://<name-for-your-app>.herokuapp.com/
+
+
+
+
+
+
 References:
 - https://docs.github.com/en/actions/learn-github-actions#using-the-checkout-action
 - https://canovasjm.netlify.app/2021/01/12/github-secrets-from-python-and-r/
