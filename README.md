@@ -138,7 +138,9 @@ heroku container:release web --app cst-hello-docker
 
 Open your app 
 
+```
 https://<name-for-your-app>.herokuapp.com/
+```
 
 
 
@@ -150,4 +152,6 @@ References:
 - https://docs.github.com/en/actions/learn-github-actions#using-the-checkout-action
 - https://canovasjm.netlify.app/2021/01/12/github-secrets-from-python-and-r/
 - https://github.com/marketplace/actions/deploy-docker-image-to-heroku-app 
+- https://github.com/marketplace/actions/build-push-and-release-a-docker-container-to-heroku
+  
 
