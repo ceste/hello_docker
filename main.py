@@ -12,7 +12,7 @@ def do_this(name):
 
     print('your secret is:',SECRET)
 
-    # print('Docker auto build on Docker Hub added!!')
+    print('Docker auto build and auto push to Docker Hub added!!')
 
     print('CI/CD workflow added!!')
 
