@@ -49,6 +49,16 @@ docker volume create <volume_name>
 docker volume create tmp
 ```
 
+## Inspect the volume to get directory location (optional)
+
+```-docker
+docker volume inspect <volume_name>
+```
+
+```-docker
+docker volume inspect tmp
+```
+
 ## Build docker image
 
 ```docker
@@ -178,6 +188,6 @@ References:
 - https://github.com/marketplace/actions/deploy-docker-image-to-heroku-app 
 - https://github.com/marketplace/actions/build-push-and-release-a-docker-container-to-heroku
 - https://www.digitalocean.com/community/tutorials/how-to-share-data-between-the-docker-container-and-the-host 
-
+- https://dev.to/jibinliu/how-to-persist-data-in-docker-container-2m72
   
 
