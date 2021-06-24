@@ -39,6 +39,16 @@ python main.py --name nadia
 python main.py --name sarah
 ```
 
+## Create a volume to persist the output (optional)
+
+```-docker
+docker volume create <volume_name>
+```
+
+```-docker
+docker volume create tmp
+```
+
 ## Build docker image
 
 ```docker
@@ -49,6 +59,18 @@ docker build -t docker-greeting .
 
 ```docker
 docker run docker-greeting python main.py --name cst
+```
+
+or 
+
+run if you want to see the output files creation
+
+```docker 
+docker run --mount source=<volumne_name>,target=<WORKDIR> <image_name> <command_to_run_your_script>
+```
+
+```docker 
+docker run --mount source=tmp,target=/app docker-greeting python main.py --name cst
 ```
 
 ## Tag docker image
