@@ -1,6 +1,6 @@
 import os
 import pytest
-from main import do_this
+from utils import do_this
 
 def test_do_this():
 
