@@ -19,7 +19,7 @@ def name(x):
 
 	filename = os.getcwd()+'/datamatrix_test_'+x+'.png'
 
-	output = {"output":"Hi, "+x+". <br> Below is the path to your 3D barcode. <br> ", 
+	output = {"output":"Hi, "+x+". <br> Below is the path to your 3D barcode. <br> ",
 				"path": filename
 			}
 	return jsonify(output)
