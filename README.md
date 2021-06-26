@@ -176,6 +176,9 @@ Open your app
 https://<name-for-your-app>.herokuapp.com/
 ```
 
+```
+https://cst-hello-docker.herokuapp.com/
+```
 
 
 Deploy Docker Image to Heroku App is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.
