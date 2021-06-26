@@ -24,13 +24,7 @@ jobs:
       env: 
           SECRET: ${{ secrets.TESTING }}
       run: |
-        pytest
-    - name: Build the Docker image
-      run: |
-        echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_ID }}" --password-stdin docker.io        
-        docker build -t docker-greeting .
-        docker tag docker-greeting:latest chandrasutrisnotjhong/docker-greeting:latest
-        docker push chandrasutrisnotjhong/docker-greeting:latest
+        pytest    
     - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
       uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
       with:
