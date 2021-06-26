@@ -16,6 +16,6 @@ RUN pip install --no-cache-dir --upgrade pip &&\
 
 EXPOSE 5050
 
-# ENTRYPOINT [ "python" ]
+ENTRYPOINT [ "python", "app.py" ]
 
-CMD [ "python", "-m" , "flask", "run", "--host=0.0.0.0"]
+#CMD [ "python", "-m" , "flask", "run", "--host=0.0.0.0"]
