@@ -3,8 +3,8 @@ name: Python application
 on:
 	push:
 		branches: [ main ]
-	pull_request:
-		branches: [ main ]
+	# pull_request:
+	# 	branches: [ main ]
 
 jobs:
 	build:
@@ -36,6 +36,6 @@ jobs:
 			- uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
 			with:
 					heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "cst-hello-docker" #Must be unique in Heroku
-          heroku_email: ${{secrets.MY_EMAIL}}
-          usedocker: true
+					heroku_app_name: "cst-hello-docker" #Must be unique in Heroku
+					heroku_email: ${{secrets.MY_EMAIL}}
+					usedocker: true
