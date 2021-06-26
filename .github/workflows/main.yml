@@ -1,41 +1,41 @@
 name: Python application
 
 on:
-	push:
-		branches: [ main ]
-	# pull_request:
-	# 	branches: [ main ]
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-	build:
+  build:
 
-		runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-		steps:
-		- uses: actions/checkout@v2
-		- name: Set up Python 3.8
-			uses: actions/setup-python@v2
-			with:
-				python-version: 3.8
-		- name: Install dependencies
-			run: |
-				pip install --upgrade pip && pip install -r requirements.txt
-		- name: Test with pytest
-			env: 
-					SECRET: ${{ secrets.TESTING }}
-			run: |
-				pytest
-		- name: Build the Docker image
-			run: |
-				echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_ID }}" --password-stdin docker.io        
-				docker build -t docker-greeting .
-				docker tag docker-greeting:latest chandrasutrisnotjhong/docker-greeting:latest
-				docker push chandrasutrisnotjhong/docker-greeting:latest
-		- name: Build, Push and Release a Docker container to Heroku. # Your custom step name
-			- uses: actions/checkout@v2
-			- uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-			with:
-					heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-					heroku_app_name: "cst-hello-docker" #Must be unique in Heroku
-					heroku_email: ${{secrets.MY_EMAIL}}
-					usedocker: true
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip && pip install -r requirements.txt
+    - name: Test with pytest
+      env: 
+          SECRET: ${{ secrets.TESTING }}
+      run: |
+        pytest
+    - name: Build the Docker image
+      run: |
+        echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_ID }}" --password-stdin docker.io        
+        docker build -t docker-greeting .
+        docker tag docker-greeting:latest chandrasutrisnotjhong/docker-greeting:latest
+        docker push chandrasutrisnotjhong/docker-greeting:latest
+    - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
+    	# - uses: actions/checkout@v2
+      uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "cst-hello-docker" #Must be unique in Heroku
+          heroku_email: ${{secrets.MY_EMAIL}}
+          usedocker: true
