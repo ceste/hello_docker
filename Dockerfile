@@ -18,4 +18,8 @@ EXPOSE 5050
 
 ENTRYPOINT [ "python", "app.py" ]
 
+<<<<<<< HEAD
 # CMD [ "python", "-m" , "flask", "run", "--host=0.0.0.0"]
+=======
+#CMD [ "python", "-m" , "flask", "run", "--host=0.0.0.0"]
+>>>>>>> 309b6c9e8ebc475acea62bc5030f2b358a0b2229

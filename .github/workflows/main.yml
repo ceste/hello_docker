@@ -24,21 +24,11 @@ jobs:
       env: 
           SECRET: ${{ secrets.TESTING }}
       run: |
-        pytest
-    - name: Build the Docker image
-      run: |
-        echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_ID }}" --password-stdin docker.io        
-        docker build -t docker-greeting .
-        docker tag docker-greeting:latest chandrasutrisnotjhong/docker-greeting:latest
-        docker push chandrasutrisnotjhong/docker-greeting:latest
+        pytest    
     - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
-      uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
-      with:      
-          email: ${{ secrets.HEROKU_EMAIL }}          
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}          
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-          dockerfile_directory: ./
-          dockerfile_name: Dockerfile
-          docker_options: "--no-cache"
-          process_type: web
-      
+      uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "cst-hello-docker" #Must be unique in Heroku
+          heroku_email: ${{secrets.MY_EMAIL}}
+          usedocker: true

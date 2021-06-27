@@ -125,6 +125,7 @@ docker pull chandrasutrisnotjhong/docker-greeting:latest
 ```
 
 ## Push local docker image to Heroku
+ 
 
 Additional steps if what you built is an API
 
@@ -176,6 +177,9 @@ Open your app
 https://<name-for-your-app>.herokuapp.com/
 ```
 
+```
+https://cst-hello-docker.herokuapp.com/
+```
 
 
 Deploy Docker Image to Heroku App is not certified by GitHub. It is provided by a third-party and is governed by separate terms of service, privacy policy, and support documentation.
@@ -189,5 +193,6 @@ References:
 - https://github.com/marketplace/actions/build-push-and-release-a-docker-container-to-heroku
 - https://www.digitalocean.com/community/tutorials/how-to-share-data-between-the-docker-container-and-the-host 
 - https://dev.to/jibinliu/how-to-persist-data-in-docker-container-2m72
+- https://github.com/marketplace/actions/deploy-to-heroku#deploy-with-docker 
   
 
