@@ -8,7 +8,7 @@ def do_this(name):
     print(f'Hello {name}')
 
     encoder = DataMatrixEncoder(name)
-    encoder.save('./datamatrix_test_'+name+'.png')
+    encoder.save('./static/images/datamatrix_test_'+name+'.png')
     print(encoder.get_ascii())
 
     print('your secret is:',SECRET)

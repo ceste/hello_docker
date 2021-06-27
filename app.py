@@ -1,9 +1,10 @@
-import os
-from flask import Flask
+import os, sys
+from flask import Flask, request, render_template, jsonify, url_for
 from utils import do_this
-from flask import jsonify
+import json
 
-app = Flask(__name__)
+
+app = Flask(__name__, static_url_path='/')
 
 @app.route('/')
 def index():
@@ -17,13 +18,18 @@ def name(x):
 
 	do_this(x)
 
-	filename = os.getcwd()+'/datamatrix_test_'+x+'.png'
+	filename = '/images/datamatrix_test_'+x+'.png'
 
-	output = {"output":"Hi, "+x+". <br> Below is the path to your 3D barcode. <br> ",
-				"path": filename
+	output = {'output':'Hi, '+x+'. <br> Below is your 3D barcode. <br> ',
+				'path': filename
 			}
-	return jsonify(output)
+
+	print(json.dumps(output), flush=True)
+
+	return render_template("app.html", value=output)
+
 
 if __name__ == '__main__':
 	port = int(os.environ.get("PORT", 5050))
 	app.run(host='0.0.0.0', port = port, debug=True)
+	# app.run(host='127.0.0.0', port = port, debug=True)

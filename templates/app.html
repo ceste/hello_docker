@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <title>Welcome</title>
+  </head>
+  <body>
+    <div id='output'></div>
+    <image id='path' width="500" height="600" src="{{url_for('static',filename = 'images/datamatrix_test_cst.png')}}" >
+
+    <script>
+
+      var output = JSON.parse('{{ value | tojson | safe}}');
+      console.log(output)
+      console.log(output.output);
+      console.log(output.path);
+
+      document.getElementById('output').innerHTML=output.output;
+      document.getElementById('path').src=output.path;
+      // document.getElementById('path').src='/home/cst/Documents/GitHub/hello_docker/datamatrix_test_cst.png'
+
+
+    </script>
+
+  </body>
+</html>
